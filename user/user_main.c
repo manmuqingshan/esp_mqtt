@@ -718,7 +718,7 @@ void ICACHE_FLASH_ATTR user_set_station_config(void) {
 }
 
 
-bool ICACHE_FLASH_ATTR mqtt_broker_auth(const char* username, const char *password, struct espconn *pesp_conn) {
+bool ICACHE_FLASH_ATTR mqtt_broker_auth(const char* username, const char *password, const char *client_id, struct espconn *pesp_conn) {
     //os_printf("connect from " IPSTR "\r\n", IP2STR((ip_addr_t *)&(pesp_conn->proto.tcp->remote_ip)));
 
     if (os_strcmp(config.mqtt_broker_user, "none") == 0)
